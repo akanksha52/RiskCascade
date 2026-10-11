@@ -1,0 +1,28 @@
+[
+  {
+    "event_id": "EV-2026-001",
+    "source_1": "Reuters: Global Semiconductor factory in Taiwan announces unexpected 6-month halt due to severe chemical fire.",
+    "source_2": "Company SEC 8-K Filing: Confirms total loss of Fab-4 facility. Production offline until Q3.",
+    "timestamp": "2026-10-08T09:15:00Z",
+    "entity": "Global SemiCorp",
+    "event_text": "Unexpected 6-month production halt due to severe chemical fire.",
+    "event_type": "Supply Disruption",
+    "sentiment": -0.85,
+    "impact": 9,
+    "confidence": 0.96,
+    "evidence": ["Reuters article on Fab-4 fire", "SEC 8-K filing confirmation"]
+  },
+  {
+    "event_id": "EV-2026-002",
+    "source_1": "Bloomberg: Major auto supplier Apex Parts hit by ransomware, shipments delayed.",
+    "source_2": "CyberSecurity Weekly: Apex Parts network isolated. No data exfiltration confirmed yet.",
+    "timestamp": "2026-10-08T11:30:00Z",
+    "entity": "Apex Parts",
+    "event_text": "Ransomware attack causes shipment delays across North America.",
+    "event_type": "Cyberattack",
+    "sentiment": -0.65,
+    "impact": 7,
+    "confidence": 0.82,
+    "evidence": ["Bloomberg shipment delay report", "CyberSecurity Weekly network isolation report"]
+  }
+]

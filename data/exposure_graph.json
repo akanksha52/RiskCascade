@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "Global SemiCorp",
+      "type": "Supplier",
+      "baseline_pd": 0.012
+    },
+    {
+      "id": "Tier-1 Auto Controls",
+      "type": "Manufacturer",
+      "baseline_pd": 0.025
+    },
+    {
+      "id": "MegaMotors Inc",
+      "type": "Automaker",
+      "baseline_pd": 0.018
+    },
+    {
+      "id": "Apex Parts",
+      "type": "Supplier",
+      "baseline_pd": 0.02
+    },
+    {
+      "id": "Auto Systems Integrator",
+      "type": "Manufacturer",
+      "baseline_pd": 0.03
+    },
+    {
+      "id": "Syndicated Loan Facility A",
+      "type": "Bank Exposure",
+      "baseline_pd": 0.0,
+      "ead": 25000000,
+      "lgd": 0.45
+    },
+    {
+      "id": "Syndicated Loan Facility B",
+      "type": "Bank Exposure",
+      "baseline_pd": 0.0,
+      "ead": 15000000,
+      "lgd": 0.45
+    }
+  ],
+  "edges": [
+    {
+      "source": "Global SemiCorp",
+      "target": "Tier-1 Auto Controls",
+      "dependency_weight": 0.8
+    },
+    {
+      "source": "Tier-1 Auto Controls",
+      "target": "MegaMotors Inc",
+      "dependency_weight": 0.6
+    },
+    {
+      "source": "MegaMotors Inc",
+      "target": "Syndicated Loan Facility A",
+      "dependency_weight": 1.0
+    },
+    {
+      "source": "Apex Parts",
+      "target": "Auto Systems Integrator",
+      "dependency_weight": 0.75
+    },
+    {
+      "source": "Auto Systems Integrator",
+      "target": "Syndicated Loan Facility B",
+      "dependency_weight": 1.0
+    }
+  ]
+}
