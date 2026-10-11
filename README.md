@@ -9,6 +9,7 @@
 **Interface:** Streamlit  
 **Demo Video:   
 **Presentation Deck:** `docs/presentation.pdf`
+**RiskCascade architecture: ** `docs/architecture.png`
 
 ---
 
