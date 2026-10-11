@@ -2,14 +2,14 @@
 
 **S&P Global & CRISIL Campus Hackathon 2026 — Code to Connect**
 
-**Candidate Name:** Akanksha Gangrade  
-**College Email ID:** 2311201260@stu.manit.ac.in  
-**College / Campus:** Maulana Azad National Institute of Technology  
-**Project Type:** Individual submission  
-**Interface:** Streamlit  
-**Demo Video:   
-**Presentation Deck:** `docs/presentation.pdf`
-**RiskCascade architecture: ** `docs/architecture.png`
+- **Candidate Name:** Akanksha Gangrade
+- **College Email ID:** 2311201260@stu.manit.ac.in
+- **College / Campus:** Maulana Azad National Institute of Technology (MANIT)
+- **Project Type:** Individual submission
+- **Interface:** Streamlit
+- **Demo Video:** https://www.youtube.com/watch?v=EAkY1tl0ybo
+- **Presentation Deck:** [`docs/presentation.pdf`](docs/presentation.pdf)
+- **Architecture Diagram:** [`docs/architecture.png`](docs/architecture.png)
 
 ---
 
@@ -21,7 +21,7 @@ Financial risk information often appears first in unstructured sources such as f
 
 The prototype separates text analysis from financial modelling. An event is not automatically treated as a financial loss: the result depends on the event attributes, evidence quality, configured shock assumptions, graph dependencies, and exposure parameters. The system compares baseline and stressed expected loss to illustrate how a risk event may affect connected portfolio exposures.
 
-**Important:** The financial shocks, portfolio exposures, and cached demonstration scenarios are synthetic or illustrative. The resulting expected-loss values are not calibrated forecasts, validated credit-risk predictions, or investment advice.
+> **Important:** The financial shocks, portfolio exposures, and cached demonstration scenarios are synthetic or illustrative. The resulting expected-loss values are not calibrated forecasts, validated credit-risk predictions, or investment advice.
 
 ## 2. Architecture & Tech Stack
 
@@ -39,8 +39,6 @@ The prototype follows this flow:
 8. **Dashboard:** Presents the analysis, exposure paths, financial metrics, and synthetic demonstration scenarios in Streamlit.
 
 ### Architecture diagram
-
-The architecture diagram will be published at `docs/architecture.png`.
 
 ![RiskCascade architecture diagram](docs/architecture.png)
 
@@ -66,14 +64,11 @@ The prototype uses the standard expected-loss relationship:
 **Expected Loss = EAD × PD × LGD**
 
 Where:
-
 - **EAD:** Exposure at Default.
 - **PD:** Probability of Default.
 - **LGD:** Loss Given Default.
 
-The engine compares baseline expected loss with stressed expected loss after applying its configured event shock and graph-propagation assumptions.
-
-The shock parameters in this prototype are illustrative and have not been statistically calibrated against historical credit outcomes.
+The engine compares baseline expected loss with stressed expected loss after applying its configured event shock and graph-propagation assumptions. The shock parameters in this prototype are illustrative and have not been statistically calibrated against historical credit outcomes.
 
 ## 3. Dataset Used
 
@@ -90,7 +85,6 @@ The ingestion module retrieves news entries from RSS feeds, including Google New
 The ingestion module retrieves public SEC current Form 8-K filing information and attempts to extract relevant filing and exhibit text.
 
 Sources:
-
 - Google News: https://news.google.com/
 - SEC EDGAR: https://www.sec.gov/edgar/search/
 
@@ -109,13 +103,13 @@ The current synthetic examples include:
 
 A synthetic factory-fire scenario is propagated through an illustrative dependency path:
 
-Global SemiCorp → Tier-1 Auto Controls → MegaMotors → Facility A.
+`Global SemiCorp → Tier-1 Auto Controls → MegaMotors → Facility A`
 
 **Scenario B — Apex Parts: Cyberattack**
 
 A synthetic cyberattack scenario is propagated through an illustrative dependency path:
 
-Apex Parts → Auto Systems Integrator → Facility B.
+`Apex Parts → Auto Systems Integrator → Facility B`
 
 The companies, events, portfolio relationships, exposure values, and associated financial outputs in these examples are illustrative. They do not represent verified real-world events, actual customer portfolios, or confidential client information.
 
@@ -137,13 +131,13 @@ The companies, events, portfolio relationships, exposure values, and associated 
 - Internet access for installing dependencies and retrieving live public-source data.
 - Ollama and the configured Qwen model for the local LLM workflow.
 
-The synthetic demo is intended to be the primary demonstration path. Live LLM analysis requires Ollama to be running locally.
+The **Synthetic Demo** is intended to be the primary demonstration path. Live LLM analysis requires Ollama to be running locally. FinBERT model files are downloaded by the model library on first use, so initial setup may require internet access.
 
 ### Clone the repository
 
 ```bash
-git clone <YOUR_PUBLIC_GITHUB_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_FOLDER>
+git clone https://github.com/akanksha52/RiskCascade.git
+cd RiskCascade
 ```
 
 ### Create a virtual environment
@@ -157,7 +151,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-If PowerShell blocks environment activation, use Command Prompt and run:
+If PowerShell blocks environment activation, use Command Prompt:
 
 ```bat
 venv\Scripts\activate.bat
@@ -197,7 +191,7 @@ Ensure the Ollama API is reachable at `http://localhost:11434`. If Ollama is not
 ollama serve
 ```
 
-Keep the Ollama service running while using local LLM analysis. The model may require substantial memory and can run more slowly on some machines.
+Keep the Ollama service running while using local LLM analysis. The model may require substantial memory and can run more slowly on some machines. The first run may download model files and take additional time.
 
 ### Run tests
 
@@ -205,7 +199,7 @@ Keep the Ollama service running while using local LLM analysis. The model may re
 python -m pytest -q
 ```
 
-The project previously passed 12 automated tests. Run the command against the submitted version and report the current result rather than assuming the previous result still applies.
+Run the command against the submitted version and report the current result rather than assuming a previous test result still applies.
 
 ## 5. Key Results & Domain Impact
 
@@ -237,7 +231,6 @@ The following are previously observed demonstration outputs. Reproduce the scena
 RiskCascade demonstrates a potential workflow for helping analysts move from unstructured public information to a structured and inspectable financial-risk scenario.
 
 Its main contribution is the explicit separation of:
-
 - Text extraction and sentiment.
 - Evidence checks.
 - Event-to-factor mapping.
@@ -268,11 +261,11 @@ Potential next steps include broader event coverage, improved source corroborati
 
 ## 7. Demo & Presentation
 
-- **Demo video:** [Add the YouTube Unlisted URL]
-- **Presentation PDF:** `docs/presentation.pdf`
-- **Architecture diagram:** `docs/architecture.png`
+- **Demo video:** https://www.youtube.com/watch?v=EAkY1tl0ybo
+- **Presentation PDF:** [`docs/presentation.pdf`](docs/presentation.pdf)
+- **Architecture diagram:** [`docs/architecture.png`](docs/architecture.png)
 
-The demo video will show the application setup, the synthetic scenarios, exposure propagation, expected-loss calculations, and the limitations of the current prototype.
+The demo video shows the live public-source review workflow, the synthetic scenarios, exposure propagation, expected-loss calculations, and the limitations of the current prototype.
 
 Before submission, verify that the video is accessible through its Unlisted link and that the presentation PDF and architecture diagram exist in the public repository.
 
